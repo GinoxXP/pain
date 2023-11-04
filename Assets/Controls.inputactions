@@ -15,13 +15,31 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Look",
-                    "type": "PassThrough",
-                    "id": "0eb8f4b3-757e-4992-ad18-9e4d7f8096df",
-                    "expectedControlType": "Vector2",
+                    "name": "Fire",
+                    "type": "Button",
+                    "id": "577ad6d1-9618-40a7-acc0-7dc1e892a4d2",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Aim",
+                    "type": "Button",
+                    "id": "7e523293-a28e-4e4f-af97-57abe80a3bb4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Look",
+                    "type": "Value",
+                    "id": "e807d259-1ed3-4c77-bc32-c0443d7bbebc",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -82,11 +100,33 @@
                 },
                 {
                     "name": "",
-                    "id": "3984a907-17c2-4206-b061-cd12d6d2c72f",
-                    "path": "<Mouse>/delta",
+                    "id": "973dcdaa-eb7a-4eaf-871c-5c499de51945",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Control scheme",
+                    "groups": "",
+                    "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "587b2cdd-e8cc-4300-88bb-3eacb20e652d",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Aim",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e687d013-dde4-4213-aa8b-57220397e7b9",
+                    "path": "<Pointer>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
                     "action": "Look",
                     "isComposite": false,
                     "isPartOfComposite": false

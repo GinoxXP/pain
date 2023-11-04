@@ -15,8 +15,11 @@ public class Player : MonoBehaviour
     private Transform character;
 
     private IEnumerator moveCoroutine;
+    private IEnumerator lookCoroutine;
+
     private Vector2 moveDirection;
     private bool isCanMove;
+    private bool isAim;
 
     public void OnMove(CallbackContext context)
     {
@@ -36,16 +39,18 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void OnLook(CallbackContext context)
+    public void OnFire(CallbackContext context)
     {
-        //var mouseDelta = context.ReadValue<Vector2>();
 
-        //if (context.performed)
-        //{
-        //    var lookDirection = new Vector3(camera.eulerAngles.x + mouseDelta.y, camera.eulerAngles.y + mouseDelta.x);
-        //    var rotation = Quaternion.Euler(lookDirection);
-        //    camera.rotation = rotation;
-        //}
+    }
+
+    public void OnAim(CallbackContext context)
+    {
+        if (context.performed)
+            isAim = true;
+
+        if (context.canceled)
+            isAim = false;
     }
 
     private IEnumerator MoveCoroutine()
@@ -59,7 +64,27 @@ public class Player : MonoBehaviour
             }
 
             var moveDirection = new Vector3(this.moveDirection.x, 0, this.moveDirection.y);
-            characterController.SimpleMove(character.rotation * moveDirection * movementSpeed);
+            characterController.SimpleMove(camera.rotation * moveDirection * movementSpeed);
+
+            if (!isAim)
+            {
+                var characterLookDirection = Vector3.ProjectOnPlane(camera.rotation * moveDirection, Vector3.up);
+                character.rotation = Quaternion.LookRotation(characterLookDirection);
+            }
+
+            yield return null;
+        }
+    }
+
+    private IEnumerator LookCoroutine()
+    {
+        while (true)
+        {
+            if (!isAim)
+            {
+                yield return null;
+                continue;
+            }
 
             var lookDirection = transform.position - camera.position;
             var characterLookDirection = Vector3.ProjectOnPlane(lookDirection, Vector3.up);
@@ -73,7 +98,13 @@ public class Player : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
 
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
         moveCoroutine = MoveCoroutine();
         StartCoroutine(moveCoroutine);
+
+        lookCoroutine = LookCoroutine();
+        StartCoroutine(lookCoroutine);
     }
 }
