@@ -9,6 +9,10 @@ public class Player : MonoBehaviour
 
     [SerializeField]
     private float movementSpeed;
+    [SerializeField]
+    private new Transform camera;
+    [SerializeField]
+    private Transform character;
 
     private IEnumerator moveCoroutine;
     private Vector2 moveDirection;
@@ -34,7 +38,14 @@ public class Player : MonoBehaviour
 
     public void OnLook(CallbackContext context)
     {
-        var direction = context.ReadValue<Vector2>();
+        //var mouseDelta = context.ReadValue<Vector2>();
+
+        //if (context.performed)
+        //{
+        //    var lookDirection = new Vector3(camera.eulerAngles.x + mouseDelta.y, camera.eulerAngles.y + mouseDelta.x);
+        //    var rotation = Quaternion.Euler(lookDirection);
+        //    camera.rotation = rotation;
+        //}
     }
 
     private IEnumerator MoveCoroutine()
@@ -48,7 +59,12 @@ public class Player : MonoBehaviour
             }
 
             var moveDirection = new Vector3(this.moveDirection.x, 0, this.moveDirection.y);
-            characterController.SimpleMove(transform.rotation * moveDirection * movementSpeed);
+            characterController.SimpleMove(character.rotation * moveDirection * movementSpeed);
+
+            var lookDirection = transform.position - camera.position;
+            var characterLookDirection = Vector3.ProjectOnPlane(lookDirection, Vector3.up);
+            character.rotation = Quaternion.LookRotation(characterLookDirection);
+
             yield return null;
         }
     }
