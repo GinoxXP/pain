@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float movementSpeed;
     [SerializeField]
+    private float rotationalSpeed;
+    [SerializeField]
     private new Transform camera;
     [SerializeField]
     private Transform character;
@@ -69,7 +71,7 @@ public class Player : MonoBehaviour
             if (!isAim)
             {
                 var characterLookDirection = Vector3.ProjectOnPlane(camera.rotation * moveDirection, Vector3.up);
-                character.rotation = Quaternion.LookRotation(characterLookDirection);
+                character.rotation = Quaternion.Lerp(character.rotation, Quaternion.LookRotation(characterLookDirection), Time.deltaTime * rotationalSpeed);
             }
 
             yield return null;
