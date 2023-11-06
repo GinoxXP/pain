@@ -531,7 +531,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 378847128}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.37517798, y: 0.000000029685369, z: -0.000000012014954, w: 0.92695284}
+  m_LocalRotation: {x: 0.37517795, y: -0.000000010865603, z: 0.0000000043977804, w: 0.92695284}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1112,7 +1112,7 @@ MonoBehaviour:
   raycastLayerMask:
     serializedVersion: 2
     m_Bits: 64
-  raycastDistance: 1.1
+  raycastDistance: 1.2
 --- !u!54 &454462142
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1147,7 +1147,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 454462133}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 69cad798571eee7488c3191c726071bc, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

@@ -67,6 +67,7 @@ public class Player : MonoBehaviour
             if (!isHasInputMove)
             {
                 yield return null;
+                rigidbody.velocity = Vector3.up * rigidbody.velocity.y;
                 continue;
             }
 
