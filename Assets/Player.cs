@@ -3,9 +3,10 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEngine.InputSystem.InputAction;
 
+[RequireComponent(typeof(Rigidbody))]
 public class Player : MonoBehaviour
 {
-    private CharacterController characterController;
+    private new Rigidbody rigidbody;
 
     [SerializeField]
     private float movementSpeed;
@@ -15,13 +16,17 @@ public class Player : MonoBehaviour
     private new Transform camera;
     [SerializeField]
     private Transform character;
+    [SerializeField]
+    private LayerMask raycastLayerMask;
+    [SerializeField]
+    private float raycastDistance;
 
     private IEnumerator moveCoroutine;
     private IEnumerator lookCoroutine;
 
     private Vector2 moveDirection;
-    private bool isCanMove;
-    private bool isAim;
+    private bool isHasInputMove;
+    private bool isHasInputAim;
 
     public void OnMove(CallbackContext context)
     {
@@ -32,11 +37,11 @@ public class Player : MonoBehaviour
         switch (context.phase)
         {
             case InputActionPhase.Performed:
-                isCanMove = true;
+                isHasInputMove = true;
                 break;
 
             case InputActionPhase.Canceled:
-                isCanMove = false;
+                isHasInputMove = false;
                 break; 
         }
     }
@@ -49,26 +54,33 @@ public class Player : MonoBehaviour
     public void OnAim(CallbackContext context)
     {
         if (context.performed)
-            isAim = true;
+            isHasInputAim = true;
 
         if (context.canceled)
-            isAim = false;
+            isHasInputAim = false;
     }
 
     private IEnumerator MoveCoroutine()
     {
         while (true)
         {
-            if (!isCanMove)
+            if (!isHasInputMove)
+            {
+                yield return null;
+                continue;
+            }
+
+            if (!Physics.Raycast(new Ray(transform.position, Vector3.down), out var hit, raycastDistance, raycastLayerMask))
             {
                 yield return null;
                 continue;
             }
 
             var moveDirection = new Vector3(this.moveDirection.x, 0, this.moveDirection.y);
-            characterController.SimpleMove(camera.rotation * moveDirection * movementSpeed);
+            var velocity = Vector3.ProjectOnPlane(camera.rotation * moveDirection, hit.normal).normalized * movementSpeed;
+            rigidbody.velocity = velocity;
 
-            if (!isAim)
+            if (!isHasInputAim)
             {
                 var characterLookDirection = Vector3.ProjectOnPlane(camera.rotation * moveDirection, Vector3.up);
                 character.rotation = Quaternion.Lerp(character.rotation, Quaternion.LookRotation(characterLookDirection), Time.deltaTime * rotationalSpeed);
@@ -82,7 +94,7 @@ public class Player : MonoBehaviour
     {
         while (true)
         {
-            if (!isAim)
+            if (!isHasInputAim)
             {
                 yield return null;
                 continue;
@@ -98,7 +110,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        characterController = GetComponent<CharacterController>();
+        rigidbody = GetComponent<Rigidbody>();
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
