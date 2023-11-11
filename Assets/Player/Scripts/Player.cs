@@ -9,6 +9,9 @@ public class Player : MonoBehaviour
     private new Rigidbody rigidbody;
 
     [SerializeField]
+    private Weapon weapon;
+    [Space]
+    [SerializeField]
     private float movementSpeed;
     [SerializeField]
     private float rotationalSpeed;
@@ -48,7 +51,10 @@ public class Player : MonoBehaviour
 
     public void OnFire(CallbackContext context)
     {
+        if (!isHasInputAim)
+            return;
 
+        weapon.Shot();
     }
 
     public void OnAim(CallbackContext context)
