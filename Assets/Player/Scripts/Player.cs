@@ -1,4 +1,5 @@
 using System.Collections;
+using Ginox.Pain.Weapon.Scripts;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEngine.InputSystem.InputAction;
@@ -11,7 +12,7 @@ namespace Ginox.Pain.Player.Scripts
         private new Rigidbody rigidbody;
 
         [SerializeField]
-        private Weapon.Scripts.Weapon weapon;
+        private WeaponController weaponController;
         [Space]
         [SerializeField]
         private float movementSpeed;
@@ -56,7 +57,16 @@ namespace Ginox.Pain.Player.Scripts
             if (!isHasInputAim)
                 return;
 
-            weapon.Shot();
+            switch (context.phase)
+            {
+                case InputActionPhase.Performed:
+                    weaponController.ButtonPressed();
+                    break;
+
+                case InputActionPhase.Canceled:
+                    weaponController.ButtonReleased();
+                    break;
+            }
         }
 
         public void OnAim(CallbackContext context)

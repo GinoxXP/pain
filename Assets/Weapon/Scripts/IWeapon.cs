@@ -1,4 +1,6 @@
-﻿namespace Ginox.Pain.Weapon.Scripts
+﻿using UnityEngine;
+
+namespace Ginox.Pain.Weapon.Scripts
 {
     public interface IWeapon
     {
@@ -11,5 +13,10 @@
         /// Activate when plaer push up attack button.
         /// </summary>
         void TriggerUp();
+
+        /// <summary>
+        /// Set layer mask for weapon.
+        /// </summary>
+        void SetLayerMask(LayerMask layerMask);
     }
 }

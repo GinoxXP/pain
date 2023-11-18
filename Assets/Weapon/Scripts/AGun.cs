@@ -1,7 +1,12 @@
-﻿namespace Ginox.Pain.Weapon.Scripts
+﻿using UnityEngine;
+
+namespace Ginox.Pain.Weapon.Scripts
 {
-    public abstract class AGun : IWeapon
+    public abstract class AGun : MonoBehaviour, IWeapon
     {
+        protected new Camera camera;
+        protected LayerMask layerMask;
+
         public int MaxBulletCount { get; set; }
 
         public int BulletCount { get; set; }
@@ -21,5 +26,27 @@
         public abstract void Fire();
 
         public abstract void Reload();
+
+        public void Shot()
+        {
+            var targetPosition = camera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, camera.nearClipPlane));
+            Shot(targetPosition);
+        }
+
+        private void Shot(Vector3 targetPosition)
+        {
+            var direction = targetPosition - camera.transform.position;
+            Debug.DrawRay(camera.transform.position, direction, Color.red, 2);
+            if (Physics.Raycast(new Ray(camera.transform.position, direction), out var hit, float.PositiveInfinity, layerMask))
+            {
+                if (hit.transform.TryGetComponent<IBulletHit>(out var iBulletHit))
+                {
+                    iBulletHit.Hit();
+                }
+            }
+        }
+
+        public void SetLayerMask(LayerMask layerMask)
+            => this.layerMask = layerMask;
     }
 }
