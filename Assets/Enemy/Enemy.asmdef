@@ -1,0 +1,16 @@
+{
+    "name": "Enemy",
+    "rootNamespace": "Ginox.Pain.Enemy",
+    "references": [
+        "GUID:e0353662332922841ae4f47eb5d7242d"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

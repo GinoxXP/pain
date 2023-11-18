@@ -1,4 +1,7 @@
-public interface IBulletHit
+namespace Ginox.Pain.Weapon.Scripts
 {
-    void Hit();
+    public interface IBulletHit
+    {
+        void Hit();
+    }
 }

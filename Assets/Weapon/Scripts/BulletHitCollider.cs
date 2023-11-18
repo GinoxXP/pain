@@ -1,12 +1,15 @@
 using System;
 using UnityEngine;
 
-public class BulletHitCollider : MonoBehaviour, IBulletHit
+namespace Ginox.Pain.Weapon.Scripts
 {
-    public event Action Hited;
-
-    public void Hit()
+    public class BulletHitCollider : MonoBehaviour, IBulletHit
     {
-        Hited?.Invoke();
+        public event Action Hited;
+
+        public void Hit()
+        {
+            Hited?.Invoke();
+        }
     }
 }

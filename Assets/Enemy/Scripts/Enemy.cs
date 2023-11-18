@@ -1,3 +1,4 @@
+using Ginox.Pain.Weapon.Scripts;
 using UnityEngine;
 using UnityEngine.AI;
 

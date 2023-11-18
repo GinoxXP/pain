@@ -1,33 +1,36 @@
 using UnityEngine;
 
-public class Weapon : MonoBehaviour
+namespace Ginox.Pain.Weapon.Scripts
 {
-    [SerializeField]
-    private LayerMask layerMask;
-
-    private new Camera camera;
-
-    public void Shot()
+    public class Weapon : MonoBehaviour
     {
-        var targetPosition = camera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, camera.nearClipPlane));
-        Shot(targetPosition);
-    }
+        [SerializeField]
+        private LayerMask layerMask;
 
-    private void Shot(Vector3 targetPosition)
-    {
-        var direction = targetPosition - camera.transform.position;
-        Debug.DrawRay(camera.transform.position, direction, Color.red, 2);
-        if (Physics.Raycast(new Ray(camera.transform.position, direction), out var hit, float.PositiveInfinity, layerMask))
+        private new Camera camera;
+
+        public void Shot()
         {
-            if (hit.transform.TryGetComponent<IBulletHit>(out var iBulletHit))
+            var targetPosition = camera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, camera.nearClipPlane));
+            Shot(targetPosition);
+        }
+
+        private void Shot(Vector3 targetPosition)
+        {
+            var direction = targetPosition - camera.transform.position;
+            Debug.DrawRay(camera.transform.position, direction, Color.red, 2);
+            if (Physics.Raycast(new Ray(camera.transform.position, direction), out var hit, float.PositiveInfinity, layerMask))
             {
-                iBulletHit.Hit();
+                if (hit.transform.TryGetComponent<IBulletHit>(out var iBulletHit))
+                {
+                    iBulletHit.Hit();
+                }
             }
         }
-    }
 
-    private void Start()
-    {
-        camera = Camera.main;
+        private void Start()
+        {
+            camera = Camera.main;
+        }
     }
 }

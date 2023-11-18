@@ -1,0 +1,17 @@
+{
+    "name": "Player",
+    "rootNamespace": "Ginox.Pain.Player",
+    "references": [
+        "GUID:e0353662332922841ae4f47eb5d7242d",
+        "GUID:75469ad4d38634e559750d17036d5f7c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
