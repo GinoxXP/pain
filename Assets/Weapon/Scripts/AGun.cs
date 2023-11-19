@@ -1,15 +1,42 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections;
+using UnityEngine;
 
 namespace Ginox.Pain.Weapon.Scripts
 {
     public abstract class AGun : MonoBehaviour, IWeapon
     {
+        [SerializeField]
+        protected int bulletCount;
+        [SerializeField]
+        protected float reloadTime;
+        [SerializeField]
+        protected int fireRate;
+        [SerializeField]
+        protected int accuracy;
+
+        protected bool isReloading;
+        protected bool isDelaying;
+        protected float fireDelay;
+        protected IEnumerator reloadCoroutine;
+        protected IEnumerator fireDelayCoroutine;
+
         protected new Camera camera;
         protected LayerMask layerMask;
 
+        public event Action BulletCountChanged;
+
         public int MaxBulletCount { get; set; }
 
-        public int BulletCount { get; set; }
+        public int BulletCount
+        {
+            get => bulletCount;
+            set
+            {
+                bulletCount = value;
+                BulletCountChanged?.Invoke();
+            }
+        }
 
         public float ReloadTime { get; set; }
 
@@ -48,5 +75,17 @@ namespace Ginox.Pain.Weapon.Scripts
 
         public void SetLayerMask(LayerMask layerMask)
             => this.layerMask = layerMask;
+
+        private void Start()
+        {
+            BulletCount = bulletCount;
+            MaxBulletCount = bulletCount;
+            ReloadTime = reloadTime;
+            FireRate = fireRate;
+            Accuracy = accuracy;
+
+            camera = Camera.main;
+            fireDelay = 60 / (float)FireRate;
+        }
     }
 }

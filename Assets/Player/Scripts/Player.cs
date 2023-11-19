@@ -60,11 +60,11 @@ namespace Ginox.Pain.Player.Scripts
             switch (context.phase)
             {
                 case InputActionPhase.Performed:
-                    weaponController.ButtonPressed();
+                    weaponController.TriggerPressed();
                     break;
 
                 case InputActionPhase.Canceled:
-                    weaponController.ButtonReleased();
+                    weaponController.TriggerReleased();
                     break;
             }
         }
@@ -76,6 +76,12 @@ namespace Ginox.Pain.Player.Scripts
 
             if (context.canceled)
                 isHasInputAim = false;
+        }
+
+        public void OnReload(CallbackContext context)
+        {
+            if (context.performed)
+                weaponController.Reload();
         }
 
         private IEnumerator MoveCoroutine()

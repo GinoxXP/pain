@@ -15,6 +15,11 @@ namespace Ginox.Pain.Weapon.Scripts
         void TriggerUp();
 
         /// <summary>
+        /// Reload weapon.
+        /// </summary>
+        void Reload();
+
+        /// <summary>
         /// Set layer mask for weapon.
         /// </summary>
         void SetLayerMask(LayerMask layerMask);

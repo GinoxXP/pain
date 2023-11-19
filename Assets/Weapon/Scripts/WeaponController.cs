@@ -21,14 +21,19 @@ namespace Ginox.Pain.Weapon.Scripts
             }
         }
 
-        public void ButtonPressed()
+        public void TriggerPressed()
         {
             CurrentWeapon.TriggerDown();
         }
 
-        public void ButtonReleased()
+        public void TriggerReleased()
         {
             CurrentWeapon.TriggerUp();
+        }
+
+        public void Reload()
+        {
+            CurrentWeapon.Reload();
         }
 
         private void Start()

@@ -672,6 +672,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: e807d259-1ed3-4c77-bc32-c0443d7bbebc
     m_ActionName: Action map/Look[/Mouse/delta]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 202595471317067650}
+        m_TargetAssemblyTypeName: Ginox.Pain.Player.Scripts.Player, Player
+        m_MethodName: OnReload
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 2f12ba5a-f2bc-4be2-911d-1ca6ac8ede9e
+    m_ActionName: Action map/Reload[/Keyboard/r]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Action map
@@ -739,6 +755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccccc5542500e404bafac8fd988ead94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponController: {fileID: 0}
   movementSpeed: 10
   rotationalSpeed: 20
   camera: {fileID: 0}
