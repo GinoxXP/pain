@@ -50,14 +50,37 @@ namespace Ginox.Pain.Weapon.Scripts
 
         public abstract void TriggerUp();
 
-        public abstract void Fire();
+        public virtual void Fire()
+        {
+            Shot();
+            Debug.Log("pew pew pew");
+            BulletCount--;
+        }
 
-        public abstract void Reload();
+        public virtual void Reload()
+        {
+            if (BulletCount != MaxBulletCount)
+            {
+                reloadCoroutine = ReloadCoroutine();
+                StartCoroutine(reloadCoroutine);
+            }
+        }
 
         public void Shot()
         {
             var targetPosition = camera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, camera.nearClipPlane));
             Shot(targetPosition);
+        }
+
+        public void SetLayerMask(LayerMask layerMask)
+            => this.layerMask = layerMask;
+
+        protected IEnumerator ReloadCoroutine()
+        {
+            isReloading = true;
+            yield return new WaitForSeconds(ReloadTime);
+            BulletCount = MaxBulletCount;
+            isReloading = false;
         }
 
         private void Shot(Vector3 targetPosition)
@@ -73,10 +96,7 @@ namespace Ginox.Pain.Weapon.Scripts
             }
         }
 
-        public void SetLayerMask(LayerMask layerMask)
-            => this.layerMask = layerMask;
-
-        private void Start()
+        protected virtual void Start()
         {
             BulletCount = bulletCount;
             MaxBulletCount = bulletCount;

@@ -5,25 +5,6 @@ namespace Ginox.Pain.Weapon.Scripts.Weapons
 {
     public class Pistol : ANonAutomaticGun
     {
-        public override void Fire()
-        {
-            Shot();
-
-            fireDelayCoroutine = FireDelayCoroutine();
-            StartCoroutine(fireDelayCoroutine);
-
-            BulletCount--;
-        }
-
-        public override void Reload()
-        {
-            if (BulletCount != MaxBulletCount)
-            {
-                reloadCoroutine = ReloadCoroutine();
-                StartCoroutine(reloadCoroutine);
-            }
-        }
-
         public override void TriggerDown()
         {
             if (BulletCount > 0 && !isReloading && !isDelaying)
@@ -34,14 +15,13 @@ namespace Ginox.Pain.Weapon.Scripts.Weapons
         {
         }
 
-        private IEnumerator ReloadCoroutine()
+        public override void Fire()
         {
-            isReloading = true;
-            yield return new WaitForSeconds(ReloadTime);
-            BulletCount = MaxBulletCount;
-            isReloading = false;
-        }
+            base.Fire();
 
+            fireDelayCoroutine = FireDelayCoroutine();
+            StartCoroutine(fireDelayCoroutine);
+        }
         private IEnumerator FireDelayCoroutine()
         {
             isDelaying = true;
