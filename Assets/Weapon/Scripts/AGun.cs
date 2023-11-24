@@ -53,7 +53,6 @@ namespace Ginox.Pain.Weapon.Scripts
         public virtual void Fire()
         {
             Shot();
-            Debug.Log("pew pew pew");
             BulletCount--;
         }
 

@@ -25,12 +25,21 @@ namespace Ginox.Pain.Weapon.Scripts.Weapons
             {
                 while (isTriggerDown)
                 {
-                    if (BulletCount > 0 && !isReloading && !isDelaying)
+                    if (BulletCount <= 0 || isReloading)
+                    {
                         isTriggerDown = false;
+                        break;
+                    }
 
-                    Fire();
-
-                    yield return new WaitForSeconds(fireDelay);
+                    if (!isDelaying)
+                    {
+                        Fire();
+                        yield return new WaitForSeconds(fireDelay);
+                    }
+                    else
+                    {
+                        yield return null;
+                    }
                 }
 
                 yield return null;

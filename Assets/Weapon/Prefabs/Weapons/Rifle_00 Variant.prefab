@@ -57,5 +57,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletCount: 25
   reloadTime: 4
-  fireRate: 300
+  fireRate: 360
   accuracy: 150
