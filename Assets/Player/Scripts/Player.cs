@@ -18,8 +18,14 @@ namespace Ginox.Pain.Player.Scripts
         private float movementSpeed;
         [SerializeField]
         private float rotationalSpeed;
+        [Space]
         [SerializeField]
         private new Transform camera;
+        [SerializeField]
+        private GameObject freeLookCamera;
+        [SerializeField]
+        private GameObject combatCamera;
+        [Space]
         [SerializeField]
         private Transform character;
         [SerializeField]
@@ -76,6 +82,8 @@ namespace Ginox.Pain.Player.Scripts
 
             if (context.canceled)
                 isHasInputAim = false;
+
+            ChangeCameras();
         }
 
         public void OnReload(CallbackContext context)
@@ -115,6 +123,12 @@ namespace Ginox.Pain.Player.Scripts
             }
         }
 
+        private void ChangeCameras()
+        {
+            freeLookCamera.SetActive(!isHasInputAim);
+            combatCamera.SetActive(isHasInputAim);
+        }
+
         private IEnumerator LookCoroutine()
         {
             while (true)
@@ -125,8 +139,7 @@ namespace Ginox.Pain.Player.Scripts
                     continue;
                 }
 
-                var lookDirection = transform.position - camera.position;
-                var characterLookDirection = Vector3.ProjectOnPlane(lookDirection, Vector3.up);
+                var characterLookDirection = Vector3.ProjectOnPlane(camera.forward, Vector3.up);
                 character.rotation = Quaternion.LookRotation(characterLookDirection);
 
                 yield return null;
