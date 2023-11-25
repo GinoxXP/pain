@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cinemachine;
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -20,6 +21,7 @@ namespace Ginox.Pain.Weapon.Scripts
         protected float fireDelay;
         protected IEnumerator reloadCoroutine;
         protected IEnumerator fireDelayCoroutine;
+        protected CinemachineImpulseSource impulseSource;
 
         protected new Camera camera;
         protected LayerMask layerMask;
@@ -53,6 +55,7 @@ namespace Ginox.Pain.Weapon.Scripts
         public virtual void Fire()
         {
             Shot();
+            impulseSource.GenerateImpulse();
             BulletCount--;
         }
 
@@ -113,6 +116,9 @@ namespace Ginox.Pain.Weapon.Scripts
             Accuracy = accuracy;
 
             camera = Camera.main;
+
+            impulseSource = GetComponent<CinemachineImpulseSource>();
+
             fireDelay = 60 / (float)FireRate;
         }
     }
