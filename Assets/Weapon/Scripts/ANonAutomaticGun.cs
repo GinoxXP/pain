@@ -8,25 +8,30 @@ namespace Ginox.Pain.Weapon.Scripts
         public override void TriggerDown()
         {
             if (BulletCount > 0 && !isReloading && !isDelaying)
+            {
                 Fire();
+                StartCoroutine(fireDelayCoroutine);
+            }
+
         }
 
         public override void TriggerUp()
         {
         }
 
-        public override void Fire()
-        {
-            base.Fire();
-
-            fireDelayCoroutine = FireDelayCoroutine();
-            StartCoroutine(fireDelayCoroutine);
-        }
         private IEnumerator FireDelayCoroutine()
         {
             isDelaying = true;
             yield return new WaitForSeconds(fireDelay);
             isDelaying = false;
+        }
+
+        protected override void Start()
+        {
+            base.Start();
+
+            fireDelayCoroutine = FireDelayCoroutine();
+            StartCoroutine(fireDelayCoroutine);
         }
     }
 }
