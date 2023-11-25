@@ -43,7 +43,7 @@ namespace Ginox.Pain.Weapon.Scripts
         // Fire in minute.
         public int FireRate { get; set; }
 
-        // Guaranteed hit on a target with a diameter of 30 cm from 100 m.
+        // Guaranteed hit on a target with a diameter of 30 cm from X m.
         public int Accuracy { get; set; }
 
         public abstract void TriggerDown();
@@ -85,12 +85,21 @@ namespace Ginox.Pain.Weapon.Scripts
         private void Shot(Vector3 targetPosition)
         {
             var direction = targetPosition - camera.transform.position;
-            Debug.DrawRay(camera.transform.position, direction, Color.red, 2);
+
+            var accuracyDirection = new Vector3(Accuracy, UnityEngine.Random.Range(-15, 15), UnityEngine.Random.Range(-15, 15)).normalized;
+            direction = Quaternion.Euler(accuracyDirection) * direction;
+            direction.Normalize();
+
             if (Physics.Raycast(new Ray(camera.transform.position, direction), out var hit, float.PositiveInfinity, layerMask))
             {
                 if (hit.transform.TryGetComponent<IBulletHit>(out var iBulletHit))
                 {
                     iBulletHit.Hit();
+                    Debug.DrawLine(transform.position, hit.point, Color.green, 3);
+                }
+                else
+                {
+                    Debug.DrawLine(transform.position, hit.point, Color.red, 3);
                 }
             }
         }
