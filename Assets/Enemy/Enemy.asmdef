@@ -2,7 +2,8 @@
     "name": "Enemy",
     "rootNamespace": "Ginox.Pain.Enemy",
     "references": [
-        "GUID:e0353662332922841ae4f47eb5d7242d"
+        "GUID:e0353662332922841ae4f47eb5d7242d",
+        "GUID:0dc952286b5f655439690fa93ca51c68"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

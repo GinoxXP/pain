@@ -1,3 +1,4 @@
+using Ginox.Pain.Enemy;
 using Ginox.Pain.Weapon.Scripts;
 using UnityEngine;
 using UnityEngine.AI;
@@ -8,6 +9,7 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private BulletHitCollider bulletHitCollider;
 
+    private FieldView fieldView;
     private NavMeshAgent agent;
 
     public void Move(Vector3 position)
@@ -18,7 +20,27 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        fieldView = GetComponentInChildren<FieldView>();
         bulletHitCollider.Hited += OnHited;
+        fieldView.PlayerDetected += OnPlayerDetected;
+        fieldView.PlayerLost += OnPlayerLost;
+    }
+
+    private void OnDestroy()
+    {
+        bulletHitCollider.Hited -= OnHited;
+        fieldView.PlayerDetected -= OnPlayerDetected;
+        fieldView.PlayerLost -= OnPlayerLost;
+    }
+
+    private void OnPlayerLost()
+    {
+        Debug.Log("I don't see you anymore");
+    }
+
+    private void OnPlayerDetected()
+    {
+        Debug.Log("I see you");
     }
 
     private void OnHited()
