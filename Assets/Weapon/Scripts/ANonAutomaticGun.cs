@@ -31,7 +31,6 @@ namespace Ginox.Pain.Weapon.Scripts
             base.Start();
 
             fireDelayCoroutine = FireDelayCoroutine();
-            StartCoroutine(fireDelayCoroutine);
         }
     }
 }

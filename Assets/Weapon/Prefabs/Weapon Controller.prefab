@@ -47,6 +47,4 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 375
-  weapons:
-  - {fileID: 0}
-  - {fileID: 0}
+  weapons: []

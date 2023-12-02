@@ -9301,18 +9301,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1928545743 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1735951478981605254, guid: 2c1823c8e15abbb49ae4d21475abb89a,
-    type: 3}
-  m_PrefabInstance: {fileID: 3723485778652668812}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edaf30812919a7a4db76a07f163e8e50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!43 &1929331808
 Mesh:
   m_ObjectHideFlags: 0
@@ -9542,18 +9530,6 @@ LightingSettings:
   m_PVRTiledBaking: 0
   m_NumRaysToShootPerTexel: -1
   m_RespectSceneVisibilityWhenBakingGI: 0
---- !u!114 &2123590120 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1952716097765855431, guid: 2c1823c8e15abbb49ae4d21475abb89a,
-    type: 3}
-  m_PrefabInstance: {fileID: 3723485778652668812}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d70bb95b3f5e44342adbbd08dbb995b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &3723485778652668812
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9670,7 +9646,7 @@ PrefabInstance:
     - target: {fileID: 1345064643194398163, guid: 2c1823c8e15abbb49ae4d21475abb89a,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9996041
+      value: 0.99960417
       objectReference: {fileID: 0}
     - target: {fileID: 1345064643194398163, guid: 2c1823c8e15abbb49ae4d21475abb89a,
         type: 3}
@@ -9685,7 +9661,7 @@ PrefabInstance:
     - target: {fileID: 1345064643194398163, guid: 2c1823c8e15abbb49ae4d21475abb89a,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.00000027613711
+      value: -0.00000027543862
       objectReference: {fileID: 0}
     - target: {fileID: 1829007125117560013, guid: 2c1823c8e15abbb49ae4d21475abb89a,
         type: 3}
@@ -10012,16 +9988,6 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.0020290187
       objectReference: {fileID: 0}
-    - target: {fileID: 7930641836350166650, guid: 2c1823c8e15abbb49ae4d21475abb89a,
-        type: 3}
-      propertyPath: weapons.Array.data[0]
-      value: 
-      objectReference: {fileID: 2123590120}
-    - target: {fileID: 7930641836350166650, guid: 2c1823c8e15abbb49ae4d21475abb89a,
-        type: 3}
-      propertyPath: weapons.Array.data[1]
-      value: 
-      objectReference: {fileID: 1928545743}
     - target: {fileID: 7947707455323180446, guid: 2c1823c8e15abbb49ae4d21475abb89a,
         type: 3}
       propertyPath: m_LocalPosition.y
