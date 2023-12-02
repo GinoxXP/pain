@@ -2,7 +2,8 @@
     "name": "Weapon",
     "rootNamespace": "Ginox.Pain.Weapon",
     "references": [
-        "GUID:4307f53044263cf4b835bd812fc161a4"
+        "GUID:4307f53044263cf4b835bd812fc161a4",
+        "GUID:d04eb9c554ad44ceab303cecf0c0cf82"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

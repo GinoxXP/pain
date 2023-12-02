@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.VFX;
 
 namespace Ginox.Pain.Weapon.Scripts
 {
@@ -25,6 +26,7 @@ namespace Ginox.Pain.Weapon.Scripts
 
         protected new Camera camera;
         protected LayerMask layerMask;
+        protected VisualEffect visualEffect;
 
         public event Action BulletCountChanged;
 
@@ -72,6 +74,7 @@ namespace Ginox.Pain.Weapon.Scripts
         {
             var targetPosition = camera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, camera.nearClipPlane));
             Shot(targetPosition);
+            visualEffect.Play();
         }
 
         public void SetLayerMask(LayerMask layerMask)
@@ -117,6 +120,7 @@ namespace Ginox.Pain.Weapon.Scripts
 
             camera = Camera.main;
 
+            visualEffect = GetComponentInChildren<VisualEffect>();
             impulseSource = GetComponent<CinemachineImpulseSource>();
 
             fireDelay = 60 / (float)FireRate;
