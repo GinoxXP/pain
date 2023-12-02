@@ -92,6 +92,18 @@ namespace Ginox.Pain.Player.Scripts
                 weaponController.Reload();
         }
 
+        public void OnFirstWeapon(CallbackContext context)
+        {
+            if (context.performed)
+                weaponController.SelectWeapon(0);
+        }
+
+        public void OnSecondWeapon(CallbackContext context)
+        {
+            if (context.performed)
+                weaponController.SelectWeapon(1);
+        }
+
         private IEnumerator MoveCoroutine()
         {
             while (true)

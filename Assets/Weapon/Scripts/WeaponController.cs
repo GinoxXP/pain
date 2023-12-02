@@ -6,9 +6,8 @@ namespace Ginox.Pain.Weapon.Scripts
     {
         [SerializeField]
         private LayerMask layerMask;
-        // TODO: Remove it
         [SerializeField]
-        private AGun selectedWeapon;
+        private AGun[] weapons;
 
         private IWeapon currentWeapon;
         public IWeapon CurrentWeapon
@@ -19,6 +18,16 @@ namespace Ginox.Pain.Weapon.Scripts
                 currentWeapon = value;
                 CurrentWeapon.SetLayerMask(layerMask);
             }
+        }
+
+        public void SelectWeapon(int index)
+        {
+            foreach (var weapon in weapons)
+                weapon.gameObject.SetActive(false);
+
+            var currentWeapon = weapons[index];
+            currentWeapon.gameObject.SetActive(true);
+            CurrentWeapon = currentWeapon;
         }
 
         public void TriggerPressed()
@@ -38,7 +47,7 @@ namespace Ginox.Pain.Weapon.Scripts
 
         private void Start()
         {
-            CurrentWeapon = selectedWeapon;
+            SelectWeapon(0);
         }
     }
 }
