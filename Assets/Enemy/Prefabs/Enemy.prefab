@@ -97,10 +97,10 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
+  m_Speed: 10
+  m_Acceleration: 10
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 240
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -323,10 +323,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4768250002969453559}
-  - component: {fileID: 4119044828932499500}
+  - component: {fileID: 3489093883153604943}
   - component: {fileID: 8086124087472962388}
-  - component: {fileID: 8818506112013057616}
   - component: {fileID: 6604321300409850393}
+  - component: {fileID: 8818506112013057616}
   m_Layer: 8
   m_Name: Field View
   m_TagString: Untagged
@@ -349,8 +349,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2409580619127260319}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &4119044828932499500
-SphereCollider:
+--- !u!65 &3489093883153604943
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -368,8 +368,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 3
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 20, y: 6, z: 20}
+  m_Center: {x: 0, y: 0, z: 15}
 --- !u!65 &8086124087472962388
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -389,20 +389,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 10, y: 6, z: 20}
+  m_Size: {x: 10, y: 6, z: 30}
   m_Center: {x: 0, y: 0, z: 10}
---- !u!114 &8818506112013057616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6820600570321340046}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7529d7da9b13731479a662c0a8e0df1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &6604321300409850393
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -430,6 +418,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8818506112013057616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6820600570321340046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7529d7da9b13731479a662c0a8e0df1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8121518951962785198
 GameObject:
   m_ObjectHideFlags: 0

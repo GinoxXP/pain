@@ -35,7 +35,7 @@ public class Enemy : MonoBehaviour
 
     private void OnPlayerLost()
     {
-        Debug.Log("I don't see you anymore");
+        Move(fieldView.LastPlayerPosition);
     }
 
     private void OnPlayerDetected()
