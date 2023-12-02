@@ -28,11 +28,11 @@ namespace Ginox.Pain.Enemy
         {
             if (other.TryGetComponent<Player.Scripts.Player>(out _))
             {
-                if (this.player == null)
+                if (player == null)
                     return;
 
                 LastPlayerPosition = player.transform.position;
-                this.player = null;
+                player = null;
                 PlayerLost?.Invoke();
             }
         }
