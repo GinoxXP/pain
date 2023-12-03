@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Ginox.Pain.Weapon.Scripts
 {
@@ -9,24 +10,37 @@ namespace Ginox.Pain.Weapon.Scripts
         [SerializeField]
         private AGun[] weapons;
 
+        public event Action WeaponChanged;
+
         private IWeapon currentWeapon;
+
         public IWeapon CurrentWeapon
         {
             get => currentWeapon;
-            set
+            private set
             {
                 currentWeapon = value;
-                CurrentWeapon.SetLayerMask(layerMask);
+                WeaponChanged?.Invoke();
             }
         }
 
+        public int CurrentWeaponIndex { get; private set; }
+
         public void SelectWeapon(int index)
         {
+            if (CurrentWeapon != null)
+            {
+                if (CurrentWeapon == (object)weapons[index])
+                    return;
+            }
+
             foreach (var weapon in weapons)
                 weapon.gameObject.SetActive(false);
 
             var currentWeapon = weapons[index];
             currentWeapon.gameObject.SetActive(true);
+
+            CurrentWeaponIndex = index;
             CurrentWeapon = currentWeapon;
         }
 
@@ -47,6 +61,9 @@ namespace Ginox.Pain.Weapon.Scripts
 
         private void Start()
         {
+            foreach(var weapon in weapons)
+                weapon.SetLayerMask(layerMask);
+
             SelectWeapon(0);
         }
     }
