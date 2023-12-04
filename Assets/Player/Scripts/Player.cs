@@ -1,7 +1,10 @@
+using System;
 using System.Collections;
 using Ginox.Pain.Weapon.Scripts;
+using Ginox.Pain.Weapon.UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Zenject;
 using static UnityEngine.InputSystem.InputAction;
 
 namespace Ginox.Pain.Player.Scripts
@@ -11,9 +14,6 @@ namespace Ginox.Pain.Player.Scripts
     {
         private new Rigidbody rigidbody;
 
-        [SerializeField]
-        private WeaponController weaponController;
-        [Space]
         [SerializeField]
         private float movementSpeed;
         [SerializeField]
@@ -33,12 +33,17 @@ namespace Ginox.Pain.Player.Scripts
         [SerializeField]
         private float raycastDistance;
 
+        private Crosshair crosshair;
+        private WeaponController weaponController;
+
         private IEnumerator moveCoroutine;
         private IEnumerator lookCoroutine;
 
         private Vector2 moveDirection;
         private bool isHasInputMove;
         private bool isHasInputAim;
+
+        public event Action AimChange;
 
         public void OnMove(CallbackContext context)
         {
@@ -137,6 +142,8 @@ namespace Ginox.Pain.Player.Scripts
 
         private void ChangeCameras()
         {
+            crosshair.Enabled = isHasInputAim;
+
             freeLookCamera.SetActive(!isHasInputAim);
             combatCamera.SetActive(isHasInputAim);
         }
@@ -170,6 +177,13 @@ namespace Ginox.Pain.Player.Scripts
 
             lookCoroutine = LookCoroutine();
             StartCoroutine(lookCoroutine);
+        }
+
+        [Inject]
+        private void Init(Crosshair crosshair, WeaponController weaponController)
+        {
+            this.crosshair = crosshair;
+            this.weaponController = weaponController;
         }
     }
 }
