@@ -244,7 +244,7 @@ MonoBehaviour:
   m_YAxis:
     Value: 0
     m_SpeedMode: 0
-    m_MaxSpeed: 2
+    m_MaxSpeed: 1.2
     m_AccelTime: 1
     m_DecelTime: 0.1
     m_InputAxisName: Mouse Y
@@ -268,7 +268,7 @@ MonoBehaviour:
   m_XAxis:
     Value: 0
     m_SpeedMode: 0
-    m_MaxSpeed: 300
+    m_MaxSpeed: 180
     m_AccelTime: 1
     m_DecelTime: 0.1
     m_InputAxisName: Mouse X
@@ -1434,7 +1434,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccccc5542500e404bafac8fd988ead94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponController: {fileID: 7930641836350166650}
   movementSpeed: 10
   rotationalSpeed: 20
   camera: {fileID: 0}
@@ -2299,15 +2298,3 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3097530684450771105}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7930641836350166650 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4968577621476460251, guid: bb61a2c0f041f01439dbc3f0d73df3f1,
-    type: 3}
-  m_PrefabInstance: {fileID: 3097530684450771105}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ff1b3fb38b344e4eb7cd601010a1877, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
