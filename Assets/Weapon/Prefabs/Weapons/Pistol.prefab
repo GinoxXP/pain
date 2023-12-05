@@ -68,6 +68,20 @@ MonoBehaviour:
   reloadTime: 2
   fireRate: 240
   accuracy: 50
+  shot: {fileID: 1556700243695880165}
+  empty: {fileID: 3121841547847020556}
+--- !u!82 &1556700243695880165 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: -4901335445502008217, guid: 3e4ec2a30265f0b44a460dda20850ad1,
+    type: 3}
+  m_PrefabInstance: {fileID: 3341802859578762114}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &3121841547847020556 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 374772550815290254, guid: 3e4ec2a30265f0b44a460dda20850ad1,
+    type: 3}
+  m_PrefabInstance: {fileID: 3341802859578762114}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4249844442342316856 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1484513313087355066, guid: 3e4ec2a30265f0b44a460dda20850ad1,

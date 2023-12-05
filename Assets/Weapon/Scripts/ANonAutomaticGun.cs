@@ -7,7 +7,13 @@ namespace Ginox.Pain.Weapon.Scripts
     {
         public override void TriggerDown()
         {
-            if (BulletCount > 0 && !isReloading && !isDelaying)
+            if (BulletCount <= 0)
+            {
+                Misfire();
+                return;
+            }
+
+            if (!isReloading && !isDelaying)
             {
                 Fire();
                 StartCoroutine(fireDelayCoroutine);

@@ -90,6 +90,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: -6844016285482794050}
   m_SourcePrefab: {fileID: 100100000, guid: 3e4ec2a30265f0b44a460dda20850ad1, type: 3}
+--- !u!82 &5037207549547272251 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: -4901335445502008217, guid: 3e4ec2a30265f0b44a460dda20850ad1,
+    type: 3}
+  m_PrefabInstance: {fileID: 9087477839497542748}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5788859693453450632 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3335792706673877460, guid: 3e4ec2a30265f0b44a460dda20850ad1,
@@ -112,9 +118,17 @@ MonoBehaviour:
   reloadTime: 4
   fireRate: 360
   accuracy: 150
+  shot: {fileID: 5037207549547272251}
+  empty: {fileID: 8876103747673370578}
 --- !u!4 &7676165717247706342 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1484513313087355066, guid: 3e4ec2a30265f0b44a460dda20850ad1,
+    type: 3}
+  m_PrefabInstance: {fileID: 9087477839497542748}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &8876103747673370578 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 374772550815290254, guid: 3e4ec2a30265f0b44a460dda20850ad1,
     type: 3}
   m_PrefabInstance: {fileID: 9087477839497542748}
   m_PrefabAsset: {fileID: 0}

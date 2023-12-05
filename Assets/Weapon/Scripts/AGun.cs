@@ -16,6 +16,11 @@ namespace Ginox.Pain.Weapon.Scripts
         protected int fireRate;
         [SerializeField]
         protected int accuracy;
+        [Space]
+        [SerializeField]
+        private AudioSource shot;
+        [SerializeField]
+        private AudioSource empty;
 
         protected bool isReloading;
         protected bool isDelaying;
@@ -57,8 +62,12 @@ namespace Ginox.Pain.Weapon.Scripts
         public virtual void Fire()
         {
             Shot();
-            impulseSource.GenerateImpulse();
             BulletCount--;
+        }
+
+        public virtual void Misfire()
+        {
+            empty.Play();
         }
 
         public virtual void Reload()
@@ -75,6 +84,8 @@ namespace Ginox.Pain.Weapon.Scripts
             var targetPosition = camera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, camera.nearClipPlane));
             Shot(targetPosition);
             visualEffect.Play();
+            impulseSource.GenerateImpulse();
+            shot.Play();
         }
 
         public void SetLayerMask(LayerMask layerMask)
