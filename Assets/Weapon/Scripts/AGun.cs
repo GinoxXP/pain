@@ -1,8 +1,10 @@
 ﻿using Cinemachine;
+using Ginox.Pain.Weapon.UI;
 using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.VFX;
+using Zenject;
 
 namespace Ginox.Pain.Weapon.Scripts
 {
@@ -32,6 +34,8 @@ namespace Ginox.Pain.Weapon.Scripts
         protected new Camera camera;
         protected LayerMask layerMask;
         protected VisualEffect visualEffect;
+
+        private BulletsIndicator bulletsIndicator;
 
         public event Action BulletCountChanged;
 
@@ -123,8 +127,8 @@ namespace Ginox.Pain.Weapon.Scripts
 
         protected virtual void Start()
         {
-            BulletCount = bulletCount;
             MaxBulletCount = bulletCount;
+            BulletCount = bulletCount;
             ReloadTime = reloadTime;
             FireRate = fireRate;
             Accuracy = accuracy;
@@ -135,6 +139,22 @@ namespace Ginox.Pain.Weapon.Scripts
             impulseSource = GetComponent<CinemachineImpulseSource>();
 
             fireDelay = 60 / (float)FireRate;
+        }
+
+        protected virtual void OnEnable()
+        {
+            bulletsIndicator?.RegisterGun(this);
+        }
+
+        protected virtual void OnDisable()
+        {
+            bulletsIndicator?.UnregisterGun(this);
+        }
+
+        [Inject]
+        private void Init(BulletsIndicator bulletsIndicator)
+        {
+            this.bulletsIndicator = bulletsIndicator;
         }
     }
 }

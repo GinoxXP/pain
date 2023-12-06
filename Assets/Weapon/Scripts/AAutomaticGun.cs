@@ -67,13 +67,17 @@ namespace Ginox.Pain.Weapon.Scripts
             fireCoroutine = FireCoroutine();
         }
 
-        protected void OnEnable()
+        protected override void OnEnable()
         {
+            base.OnEnable();
+
             StartCoroutine(fireCoroutine);
         }
 
-        protected void OnDisable()
+        protected override void OnDisable()
         {
+            base.OnDisable();
+
             StopCoroutine(fireCoroutine);
         }
     }

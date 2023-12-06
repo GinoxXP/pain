@@ -8,5 +8,6 @@ public class Installer : MonoInstaller
     {
         Container.Bind<WeaponController>().FromComponentInHierarchy().AsSingle();
         Container.Bind<Crosshair>().FromComponentInHierarchy().AsSingle();
+        Container.Bind<BulletsIndicator>().FromComponentInHierarchy().AsSingle();
     }
 }
