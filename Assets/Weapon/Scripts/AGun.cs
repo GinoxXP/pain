@@ -87,6 +87,7 @@ namespace Ginox.Pain.Weapon.Scripts
         {
             var targetPosition = camera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, camera.nearClipPlane));
             Shot(targetPosition);
+            visualEffect.Reinit();
             visualEffect.Play();
             impulseSource.GenerateImpulse();
             shot.Play();
