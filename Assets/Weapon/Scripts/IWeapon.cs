@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Ginox.Pain.Weapon.Scripts
+namespace Ginox.Pain.Weapon
 {
     public interface IWeapon
     {

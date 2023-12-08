@@ -1,4 +1,4 @@
-﻿namespace Ginox.Pain.Weapon.Scripts.Weapons
+﻿namespace Ginox.Pain.Weapon.Weapons
 {
     public class Rifle : AAutomaticGun
     {

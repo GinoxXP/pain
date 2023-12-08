@@ -1,5 +1,4 @@
-﻿using Ginox.Pain.Weapon.Scripts;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 
 namespace Ginox.Pain.Weapon.UI

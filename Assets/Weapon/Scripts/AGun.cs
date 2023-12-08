@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.VFX;
 using Zenject;
 
-namespace Ginox.Pain.Weapon.Scripts
+namespace Ginox.Pain.Weapon
 {
     public abstract class AGun : MonoBehaviour, IWeapon
     {

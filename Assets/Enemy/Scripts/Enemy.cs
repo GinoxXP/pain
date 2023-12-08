@@ -1,50 +1,52 @@
-using Ginox.Pain.Enemy;
-using Ginox.Pain.Weapon.Scripts;
+using Ginox.Pain.Weapon;
 using UnityEngine;
 using UnityEngine.AI;
 
-[RequireComponent(typeof(NavMeshAgent))]
-public class Enemy : MonoBehaviour
+namespace Ginox.Pain.Enemy
 {
-    [SerializeField]
-    private BulletHitCollider bulletHitCollider;
-
-    private FieldView fieldView;
-    private NavMeshAgent agent;
-
-    public void Move(Vector3 position)
+    [RequireComponent(typeof(NavMeshAgent))]
+    public class Enemy : MonoBehaviour
     {
-        agent.SetDestination(position);
-    }
+        [SerializeField]
+        private BulletHitCollider bulletHitCollider;
 
-    private void Start()
-    {
-        agent = GetComponent<NavMeshAgent>();
-        fieldView = GetComponentInChildren<FieldView>();
-        bulletHitCollider.Hited += OnHited;
-        fieldView.PlayerDetected += OnPlayerDetected;
-        fieldView.PlayerLost += OnPlayerLost;
-    }
+        private FieldView fieldView;
+        private NavMeshAgent agent;
 
-    private void OnDestroy()
-    {
-        bulletHitCollider.Hited -= OnHited;
-        fieldView.PlayerDetected -= OnPlayerDetected;
-        fieldView.PlayerLost -= OnPlayerLost;
-    }
+        public void Move(Vector3 position)
+        {
+            agent.SetDestination(position);
+        }
 
-    private void OnPlayerLost()
-    {
-        Move(fieldView.LastPlayerPosition);
-    }
+        private void Start()
+        {
+            agent = GetComponent<NavMeshAgent>();
+            fieldView = GetComponentInChildren<FieldView>();
+            bulletHitCollider.Hited += OnHited;
+            fieldView.PlayerDetected += OnPlayerDetected;
+            fieldView.PlayerLost += OnPlayerLost;
+        }
 
-    private void OnPlayerDetected()
-    {
-        Debug.Log("I see you");
-    }
+        private void OnDestroy()
+        {
+            bulletHitCollider.Hited -= OnHited;
+            fieldView.PlayerDetected -= OnPlayerDetected;
+            fieldView.PlayerLost -= OnPlayerLost;
+        }
 
-    private void OnHited()
-    {
-        Debug.Log("Hit");
+        private void OnPlayerLost()
+        {
+            Move(fieldView.LastPlayerPosition);
+        }
+
+        private void OnPlayerDetected()
+        {
+            Debug.Log("I see you");
+        }
+
+        private void OnHited()
+        {
+            Debug.Log("Hit");
+        }
     }
 }

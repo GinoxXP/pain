@@ -8,13 +8,13 @@ namespace Ginox.Pain.Enemy
         public event Action PlayerDetected;
         public event Action PlayerLost;
 
-        private Player.Scripts.Player player;
+        private Player.Player player;
 
         public Vector3 LastPlayerPosition { get; private set; }
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.TryGetComponent<Player.Scripts.Player>(out var player))
+            if (other.TryGetComponent<Player.Player>(out var player))
             {
                 if (this.player != null)
                     return;
@@ -26,7 +26,7 @@ namespace Ginox.Pain.Enemy
 
         private void OnTriggerExit(Collider other)
         {
-            if (other.TryGetComponent<Player.Scripts.Player>(out _))
+            if (other.TryGetComponent<Player.Player>(out _))
             {
                 if (player == null)
                     return;

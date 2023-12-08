@@ -1,4 +1,4 @@
-using Ginox.Pain.Weapon.Scripts;
+using Ginox.Pain.Weapon;
 using Ginox.Pain.Weapon.UI;
 using Zenject;
 

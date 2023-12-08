@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Ginox.Pain.Weapon.Scripts
+namespace Ginox.Pain.Weapon
 {
     public class WeaponController : MonoBehaviour
     {

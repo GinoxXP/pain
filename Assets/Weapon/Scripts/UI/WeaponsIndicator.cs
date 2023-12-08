@@ -1,5 +1,4 @@
-﻿using Ginox.Pain.Weapon.Scripts;
-using UnityEngine;
+﻿using UnityEngine;
 using Zenject;
 
 namespace Ginox.Pain.Weapon.UI

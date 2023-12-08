@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace Ginox.Pain.Weapon.Scripts
+namespace Ginox.Pain.Weapon
 {
     public abstract class AAutomaticGun : AGun
     {

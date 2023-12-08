@@ -1,13 +1,13 @@
 using System;
 using System.Collections;
-using Ginox.Pain.Weapon.Scripts;
+using Ginox.Pain.Weapon;
 using Ginox.Pain.Weapon.UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Zenject;
 using static UnityEngine.InputSystem.InputAction;
 
-namespace Ginox.Pain.Player.Scripts
+namespace Ginox.Pain.Player
 {
     [RequireComponent(typeof(Rigidbody))]
     public class Player : MonoBehaviour
