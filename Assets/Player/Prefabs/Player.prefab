@@ -363,7 +363,7 @@ Transform:
   m_GameObject: {fileID: 1148876738977817026}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.32840866, y: 1.2742316, z: -0.27546573}
+  m_LocalPosition: {x: 0.17, y: 1.2742316, z: -0.27546573}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -655,8 +655,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2049068676921143990}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.047178913, y: -0.0000000048664597, z: 2.2985022e-10, w: 0.99888647}
-  m_LocalPosition: {x: 0, y: 0.38338482, z: -2.8753095}
+  m_LocalRotation: {x: 0.04718099, y: -7.781814e-10, z: 3.6756303e-11, w: 0.9988864}
+  m_LocalPosition: {x: 0, y: 0.3833934, z: -2.8753045}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -705,7 +705,7 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_YAxis:
-    Value: 0.5905535
+    Value: 0.5905554
     m_SpeedMode: 0
     m_MaxSpeed: 2
     m_AccelTime: 1
@@ -841,7 +841,7 @@ Transform:
   m_GameObject: {fileID: 2344161364294980267}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.32840866, y: 1.2742316, z: -0.27546573}
+  m_LocalPosition: {x: -0.17, y: 1.2742316, z: -0.27546573}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -872,7 +872,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2437997599204322396}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.027411785, y: 0.000000003787974, z: -2.5408964e-10, w: 0.99962425}
+  m_LocalRotation: {x: -0.02741228, y: 7.7730206e-10, z: -5.2142714e-11, w: 0.99962425}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1638,8 +1638,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4870022934911329055}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.019079916, y: 0.000000009114483, z: -0.0000000010387184,
-    w: 0.99981797}
+  m_LocalRotation: {x: 0.019079428, y: 0.000000005047967, z: -5.753028e-10, w: 0.999818}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1839,7 +1838,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 0.38338485, z: -2.8753095}
+  m_FollowOffset: {x: 0, y: 0.38339344, z: -2.8753045}
   m_XDamping: 0.2
   m_YDamping: 0.2
   m_ZDamping: 0.2
@@ -2538,7 +2537,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 0.38338485, z: -2.8753095}
+  m_FollowOffset: {x: 0, y: 0.38339344, z: -2.8753045}
   m_XDamping: 0.2
   m_YDamping: 0.2
   m_ZDamping: 0.2
@@ -2693,7 +2692,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7166452236753227818}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.004217427, y: 0.0000000048520903, z: -4.387291e-10, w: 0.9999911}
+  m_LocalRotation: {x: -0.00421793, y: 7.758834e-10, z: -7.015874e-11, w: 0.9999911}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2837,7 +2836,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 0, y: 0.38338485, z: -2.8753095}
+  m_FollowOffset: {x: 0, y: 0.38339344, z: -2.8753045}
   m_XDamping: 0.2
   m_YDamping: 0.2
   m_ZDamping: 0.2
@@ -3356,7 +3355,7 @@ PrefabInstance:
     - target: {fileID: 4249844442342316856, guid: a34136868d0caa6409a3646721ad0f00,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.35
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 4249844442342316856, guid: a34136868d0caa6409a3646721ad0f00,
         type: 3}
@@ -3565,7 +3564,7 @@ PrefabInstance:
     - target: {fileID: 7676165717247706342, guid: 5a53703098195cf448d0a8f142f122de,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.265
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7676165717247706342, guid: 5a53703098195cf448d0a8f142f122de,
         type: 3}
