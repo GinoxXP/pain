@@ -6,8 +6,23 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 7676165717247706342}
+    m_TransformParent: {fileID: 2372688539328791941}
     m_Modifications:
+    - target: {fileID: 2349258150479485684, guid: cc4156adf6614cb4693b57fd602cf0b9,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2349258150479485684, guid: cc4156adf6614cb4693b57fd602cf0b9,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2349258150479485684, guid: cc4156adf6614cb4693b57fd602cf0b9,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
     - target: {fileID: 2349258150479485684, guid: cc4156adf6614cb4693b57fd602cf0b9,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -80,7 +95,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 1484513313087355066, guid: 3e4ec2a30265f0b44a460dda20850ad1,
+    - targetCorrespondingSourceObject: {fileID: 6841055061576612313, guid: 3e4ec2a30265f0b44a460dda20850ad1,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 5250241038485550545}
@@ -90,6 +105,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: -6844016285482794050}
   m_SourcePrefab: {fileID: 100100000, guid: 3e4ec2a30265f0b44a460dda20850ad1, type: 3}
+--- !u!4 &2372688539328791941 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6841055061576612313, guid: 3e4ec2a30265f0b44a460dda20850ad1,
+    type: 3}
+  m_PrefabInstance: {fileID: 9087477839497542748}
+  m_PrefabAsset: {fileID: 0}
 --- !u!82 &5037207549547272251 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: -4901335445502008217, guid: 3e4ec2a30265f0b44a460dda20850ad1,
@@ -120,12 +141,6 @@ MonoBehaviour:
   accuracy: 150
   shot: {fileID: 5037207549547272251}
   empty: {fileID: 8876103747673370578}
---- !u!4 &7676165717247706342 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1484513313087355066, guid: 3e4ec2a30265f0b44a460dda20850ad1,
-    type: 3}
-  m_PrefabInstance: {fileID: 9087477839497542748}
-  m_PrefabAsset: {fileID: 0}
 --- !u!82 &8876103747673370578 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 374772550815290254, guid: 3e4ec2a30265f0b44a460dda20850ad1,
