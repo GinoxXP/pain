@@ -143,6 +143,8 @@ namespace Ginox.Pain.Weapon
             rig = GetComponent<Rig>();
 
             fireDelay = 60 / (float)FireRate;
+
+            rig.weight = 1;
         }
 
         protected virtual void OnEnable()
