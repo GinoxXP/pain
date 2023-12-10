@@ -29,6 +29,8 @@ namespace Ginox.Pain.Player
         [SerializeField]
         private Transform character;
         [SerializeField]
+        private Animator animator;
+        [SerializeField]
         private LayerMask raycastLayerMask;
         [SerializeField]
         private float raycastDistance;
@@ -113,6 +115,8 @@ namespace Ginox.Pain.Player
         {
             while (true)
             {
+                animator.SetBool("IsRun", isHasInputMove);
+
                 if (!isHasInputMove)
                 {
                     yield return null;
