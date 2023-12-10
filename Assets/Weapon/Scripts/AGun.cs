@@ -3,6 +3,7 @@ using Ginox.Pain.Weapon.UI;
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Animations.Rigging;
 using UnityEngine.VFX;
 using Zenject;
 
@@ -30,6 +31,7 @@ namespace Ginox.Pain.Weapon
         protected IEnumerator reloadCoroutine;
         protected IEnumerator fireDelayCoroutine;
         protected CinemachineImpulseSource impulseSource;
+        protected Rig rig;
 
         protected new Camera camera;
         protected LayerMask layerMask;
@@ -138,6 +140,7 @@ namespace Ginox.Pain.Weapon
 
             visualEffect = GetComponentInChildren<VisualEffect>();
             impulseSource = GetComponent<CinemachineImpulseSource>();
+            rig = GetComponent<Rig>();
 
             fireDelay = 60 / (float)FireRate;
         }
@@ -145,11 +148,17 @@ namespace Ginox.Pain.Weapon
         protected virtual void OnEnable()
         {
             bulletsIndicator?.RegisterGun(this);
+            
+            if (rig != null)
+                rig.weight = 1;
         }
 
         protected virtual void OnDisable()
         {
             bulletsIndicator?.UnregisterGun(this);
+
+            if (rig != null)
+                rig.weight = 0;
         }
 
         [Inject]
