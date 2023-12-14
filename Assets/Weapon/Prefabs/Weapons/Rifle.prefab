@@ -82,6 +82,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rifle
       objectReference: {fileID: 0}
+    - target: {fileID: 6317196940319989051, guid: 3e4ec2a30265f0b44a460dda20850ad1,
+        type: 3}
+      propertyPath: m_Data.m_ConstrainedObject
+      value: 
+      objectReference: {fileID: 2372688539328791941}
     - target: {fileID: 7386577984398953620, guid: 3e4ec2a30265f0b44a460dda20850ad1,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -141,6 +146,8 @@ MonoBehaviour:
   accuracy: 150
   shot: {fileID: 5037207549547272251}
   empty: {fileID: 8876103747673370578}
+  aimRig: {fileID: 0}
+  idleRig: {fileID: 0}
 --- !u!82 &8876103747673370578 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 374772550815290254, guid: 3e4ec2a30265f0b44a460dda20850ad1,
