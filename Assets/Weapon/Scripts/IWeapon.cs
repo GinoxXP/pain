@@ -23,5 +23,15 @@ namespace Ginox.Pain.Weapon
         /// Set layer mask for weapon.
         /// </summary>
         void SetLayerMask(LayerMask layerMask);
+
+        /// <summary>
+        /// Change rigs to aim state.
+        /// </summary>
+        void Aim();
+
+        /// <summary>
+        /// Change rigs to idle state.
+        /// </summary>
+        void Idle();
     }
 }

@@ -85,10 +85,16 @@ namespace Ginox.Pain.Player
         public void OnAim(CallbackContext context)
         {
             if (context.performed)
+            {
                 isHasInputAim = true;
+                weaponController.Aim();
+            }
 
             if (context.canceled)
+            {
                 isHasInputAim = false;
+                weaponController.Idle();
+            }
 
             ChangeCameras();
         }

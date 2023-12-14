@@ -24,6 +24,11 @@ namespace Ginox.Pain.Weapon
         private AudioSource shot;
         [SerializeField]
         private AudioSource empty;
+        [Space]
+        [SerializeField]
+        protected Rig aimRig;
+        [SerializeField]
+        protected Rig idleRig;
 
         protected bool isReloading;
         protected bool isDelaying;
@@ -31,7 +36,6 @@ namespace Ginox.Pain.Weapon
         protected IEnumerator reloadCoroutine;
         protected IEnumerator fireDelayCoroutine;
         protected CinemachineImpulseSource impulseSource;
-        protected Rig rig;
 
         protected new Camera camera;
         protected LayerMask layerMask;
@@ -98,6 +102,18 @@ namespace Ginox.Pain.Weapon
         public void SetLayerMask(LayerMask layerMask)
             => this.layerMask = layerMask;
 
+        public void Aim()
+        {
+            aimRig.weight = 1;
+            idleRig.weight = 0;
+        }
+
+        public void Idle()
+        {
+            idleRig.weight = 1;
+            aimRig.weight = 0;
+        }
+
         protected IEnumerator ReloadCoroutine()
         {
             isReloading = true;
@@ -140,27 +156,21 @@ namespace Ginox.Pain.Weapon
 
             visualEffect = GetComponentInChildren<VisualEffect>();
             impulseSource = GetComponent<CinemachineImpulseSource>();
-            rig = GetComponent<Rig>();
 
             fireDelay = 60 / (float)FireRate;
 
-            rig.weight = 1;
         }
 
         protected virtual void OnEnable()
         {
             bulletsIndicator?.RegisterGun(this);
-            
-            if (rig != null)
-                rig.weight = 1;
         }
 
         protected virtual void OnDisable()
         {
             bulletsIndicator?.UnregisterGun(this);
-
-            if (rig != null)
-                rig.weight = 0;
+            aimRig.weight = 0;
+            idleRig.weight = 0;
         }
 
         [Inject]

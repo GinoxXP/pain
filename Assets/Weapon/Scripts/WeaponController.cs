@@ -13,6 +13,7 @@ namespace Ginox.Pain.Weapon
         public event Action WeaponChanged;
 
         private IWeapon currentWeapon;
+        private bool isAim;
 
         public IWeapon CurrentWeapon
         {
@@ -42,6 +43,11 @@ namespace Ginox.Pain.Weapon
 
             CurrentWeaponIndex = index;
             CurrentWeapon = currentWeapon;
+
+            if (isAim)
+                Aim();
+            else
+                Idle();
         }
 
         public void TriggerPressed()
@@ -59,12 +65,25 @@ namespace Ginox.Pain.Weapon
             CurrentWeapon.Reload();
         }
 
+        public void Aim()
+        {
+            CurrentWeapon.Aim();
+            isAim = true;
+        }
+
+        public void Idle()
+        {
+            CurrentWeapon.Idle();
+            isAim = false;
+        }
+
         private void Start()
         {
             foreach(var weapon in weapons)
                 weapon.SetLayerMask(layerMask);
 
             SelectWeapon(0);
+            Idle();
         }
     }
 }
