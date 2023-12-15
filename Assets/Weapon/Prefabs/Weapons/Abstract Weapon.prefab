@@ -627,7 +627,7 @@ MonoBehaviour:
     m_DissipationMode: 2
     m_DissipationDistance: 100
     m_PropagationSpeed: 343
-  m_DefaultVelocity: {x: 0, y: 0, z: -0.5}
+  m_DefaultVelocity: {x: 0, y: 0, z: -0.1}
 --- !u!82 &-4901335445502008217
 AudioSource:
   m_ObjectHideFlags: 0
