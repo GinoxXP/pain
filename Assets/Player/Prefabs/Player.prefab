@@ -1638,7 +1638,7 @@ Transform:
   m_GameObject: {fileID: 4860025603157457458}
   serializedVersion: 2
   m_LocalRotation: {x: -0.35355294, y: -0.35355332, z: -0.6123728, w: 0.6123724}
-  m_LocalPosition: {x: 0.031999983, y: -0.06524436, z: 0.44204456}
+  m_LocalPosition: {x: 0.031999983, y: -0.031202871, z: 0.31308922}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.10000002}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3290,7 +3290,7 @@ Transform:
   m_GameObject: {fileID: 9039414198071878042}
   serializedVersion: 2
   m_LocalRotation: {x: -0.35355312, y: 0.35355315, z: 0.6123726, w: 0.6123727}
-  m_LocalPosition: {x: -0.014000019, y: -0.120041475, z: 0.63095534}
+  m_LocalPosition: {x: -0.014000019, y: -0.086, z: 0.502}
   m_LocalScale: {x: 0.10000002, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3950,16 +3950,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Effectors.Array.data[4].m_Style.color.r
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9176786630232447100, guid: a34136868d0caa6409a3646721ad0f00,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.10177788
-      objectReference: {fileID: 0}
-    - target: {fileID: 9176786630232447100, guid: a34136868d0caa6409a3646721ad0f00,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.45000002
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4687,16 +4677,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3397752465542645666, guid: 5a53703098195cf448d0a8f142f122de,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.02022217
-      objectReference: {fileID: 0}
-    - target: {fileID: 3397752465542645666, guid: 5a53703098195cf448d0a8f142f122de,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.39999998
       objectReference: {fileID: 0}
     - target: {fileID: 5132168400159778582, guid: 5a53703098195cf448d0a8f142f122de,
         type: 3}

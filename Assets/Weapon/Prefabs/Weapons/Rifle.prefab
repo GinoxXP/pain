@@ -77,10 +77,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2966306865004319119, guid: 3e4ec2a30265f0b44a460dda20850ad1,
+        type: 3}
+      propertyPath: m_Data.m_Offset.x
+      value: -60
+      objectReference: {fileID: 0}
+    - target: {fileID: 2966306865004319119, guid: 3e4ec2a30265f0b44a460dda20850ad1,
+        type: 3}
+      propertyPath: m_Data.m_ConstrainedObject
+      value: 
+      objectReference: {fileID: 2372688539328791941}
     - target: {fileID: 3335792706673877460, guid: 3e4ec2a30265f0b44a460dda20850ad1,
         type: 3}
       propertyPath: m_Name
       value: Rifle
+      objectReference: {fileID: 0}
+    - target: {fileID: 5853000763325594622, guid: 3e4ec2a30265f0b44a460dda20850ad1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.012958508
+      objectReference: {fileID: 0}
+    - target: {fileID: 5853000763325594622, guid: 3e4ec2a30265f0b44a460dda20850ad1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.47504464
       objectReference: {fileID: 0}
     - target: {fileID: 6317196940319989051, guid: 3e4ec2a30265f0b44a460dda20850ad1,
         type: 3}

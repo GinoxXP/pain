@@ -33,6 +33,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pistol
       objectReference: {fileID: 0}
+    - target: {fileID: 5853000763325594622, guid: 3e4ec2a30265f0b44a460dda20850ad1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.1871
+      objectReference: {fileID: 0}
+    - target: {fileID: 5853000763325594622, guid: 3e4ec2a30265f0b44a460dda20850ad1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.4711
+      objectReference: {fileID: 0}
     - target: {fileID: 6317196940319989051, guid: 3e4ec2a30265f0b44a460dda20850ad1,
         type: 3}
       propertyPath: m_Data.m_ConstrainedObject
